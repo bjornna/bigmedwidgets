@@ -1,0 +1,33 @@
+{
+  "name": "bigmedwidgets",
+  "version": "1.0.0",
+  "description": "Some prototypes of widgets to be used in BigMed clinical desktop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjornna/bigmedwidgets.git"
+  },
+  "keywords": [
+    "bigmed",
+    "openehr"
+  ],
+  "author": "Bjørn Næss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjornna/bigmedwidgets/issues"
+  },
+  "homepage": "https://github.com/bjornna/bigmedwidgets#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "lokijs": "^1.5.5"
+  }
+}

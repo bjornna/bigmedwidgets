@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BigMed Widgets#admin</title>
+    </head>
+    <body>
+        <h1>EHRS</h1>
+        <ul id="example-1">
+            <li v-for="e in ehrs">
+              {{ e.ehr_id }} {{e.subject_id}}
+              
+              <ul>
+                  <li v-for="p in e.procedures">
+                      {{p.code}}  - {{p.name}}
+                  </li>
+              </ul>
+              
+              <ul>
+                <li v-for="p in e.diagnosis">
+                    {{p.code}}  - {{p.name}}
+                </li>
+            </ul>
+            </li>
+          </ul>
+          <!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="admin.js"></script>
+    </body>
+</html>
