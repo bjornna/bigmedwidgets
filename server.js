@@ -127,10 +127,37 @@ router.route("/ehrs")
         });
     });
 
+    var Prob = require('prob.js');
+    //var r = Prob.normal(0, 1.0);
+    //var r = Prob.poisson(100) ;
+    //var r = Prob.zipf(100, 100);
+    //var r = Prob.lognormal(0.1, 10);
+    //var r = Prob.exponential(11.0);
+    var r = Prob.uniform(number(0,2), number(10,30));
+
+    router.get("/stat/random/:num", (request, response)=>{
+        var num = request.params.num;
+        console.log("Request random num of size:" + num);
+        var res = [];
+        var n = 100;
+        for (let index = 0; index < num; index++) {
+            if(n <= 0){
+                res.push(0);
+            }else{
+            res.push(n);
+            n = n - r();
+            }
+            
+            
+        }
+        response.send(res);
+    });
+
 //https://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 // set the server to listen on port 3000
 app.listen(3000, () => console.log('Listening on port 3000'));
+
 
 
 function number(min, max) {

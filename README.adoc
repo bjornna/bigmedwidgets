@@ -8,7 +8,7 @@ https://xd.adobe.com/view/485b2d6b-5264-41fc-b5ca-f18aaa635cb6/?fullscreen[]
 
 == Run 
 
-`git clone git@github.com:bjornna/bigmedwidgets.git`
+`git clone https://github.com/bjornna/bigmedwidgets`
 
 `npm run start`
 
