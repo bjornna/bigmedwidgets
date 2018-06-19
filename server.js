@@ -31,10 +31,6 @@ ehrs.insert({
         {
             "code": "ABFX10",
             "name": "Bulbocavernøs reflekstest"
-        },
-        {
-            "code": "ABFX10",
-            "name": "Bulbocavernøs reflekstest"
         }
     ]
 });
@@ -58,7 +54,7 @@ ehrs.insert({
 app.use('/api', router);
 router.get('/', (request, response) => {
     response.json({
-        message: "Hello and welcome to my server"
+        message: "This is the BigMedWidget Server"
     });
 });
 

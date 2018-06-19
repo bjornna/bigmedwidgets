@@ -5,7 +5,7 @@ api.addListener(PROBLEM, "OnChanged",function (id, value, parent){
     var fArr =  api.getFields(id);
     for (let index = 0; index < fArr.length; index++) {
         const element = fArr[index];
-        console.log(element);
+        //console.log(api.toString(element));
         
         
     }

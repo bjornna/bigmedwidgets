@@ -1,0 +1,34 @@
+= BigMed Widgets
+
+== Disclaimer 
+This project is not developed to demonstrate best practise. It's only  purpose is to make a quick and dirty prototype on how to connect a running EHR system based on openENR and to provide some CDS. The widgets are made to illustrate those in the following clinical desktop:
+
+https://xd.adobe.com/view/485b2d6b-5264-41fc-b5ca-f18aaa635cb6/?fullscreen[]
+
+
+== Run 
+
+`git clone git@github.com:bjornna/bigmedwidgets.git`
+
+`npm run start`
+
+== Dev 
+
+Use nodemon to hot reload when developing the scripts 
+
+`npm install --save-dev nodemon`
+
+`npm run dev`
+
+== Docker 
+
+`docker build -t bjornna/bigmedwidgets .`
+
+`docker run -p 3100:3000 -d bjornna/bigmedwidgets`
+
+== Usage 
+The purpose of this project is to prototype how widgets may communicate with DIPS Arena to make CDS possible. 
+
+Take a look at the javascript file under `formjs/trajectory_advice.js` which is an example on how to connect the services to a running openEHR Form.
+
+
