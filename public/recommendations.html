@@ -6,79 +6,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="app.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css" crossorigin="anonymous">
+    <!--     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css" crossorigin="anonymous"> -->
     <!-- Latest compiled and minified JavaScript -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div id="ehr">
-            <h1 class="text-center">Relevante artiker</h1>
-
-            <h2>Prosedyrer</h2>
-            <div class="row">
-                <div class="col-sm-4" v-for="p in procedures">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{p.code}} </h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{p.name}}</h6>
-                            <p class="card-text">
-                                <p>RAS Mutation Clinical Risk Score to Predict Survival After Resection of Colorectal Liver
-                                    Metastases
-                                </p>
-                                <p>Laparoscopics versus open resection for colorectal liver metastases: the OSLO-COMET randomized
-                                    trail
-                                </p>
-                            </p>
-                            <a href="#" class="card-link">Link</a>
-                            <a href="#" class="card-link">Another link</a>
+                <p>Tilstander som påvirker anbefalingen</p>
+                <ul>
+                    <li v-for="d in diagnosis">
+                        {{d.code}}
+                        <small>{{d.name}}</small>
+                    </li>
+                </ul>
+            <div v-for="p in procedures">
+                    <h4 class="text-secondary">{{p.code}} <small>{{p.name}}</small></h4>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" v-for="a in getArticles(p.code)">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{a.title}}</h6>
+                            <small class="text-muted">{{a.date}}</small>
                         </div>
-                    </div>
+
+                        <p class="mb-1">{{a.text}}</p>
+                        <small class="text-muted">{{a.url}}</small>
+                    </a>
                 </div>
             </div>
 
 
-            <h2>Diagnoser</h2>
-            <div class="row">
-                <div class="col-sm-4" v-for="d in diagnosis">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{d.code}} </h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{d.name}}</h6>
-                            <p class="card-text">
-                                <p>RAS Mutation Clinical Risk Score to Predict Survival After Resection of Colorectal Liver
-                                    Metastases
-                                </p>
-                                <p>Laparoscopics versus open resection for colorectal liver metastases: the OSLO-COMET randomized
-                                    trail
-                                </p>
-                            </p>
-                            <a href="#" class="card-link">Link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            
             <p>{{ehr_id}}</p>
         </div>
 
 
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
     <script src="common.js"></script>
     <script src="recommendations.js"></script>
 
