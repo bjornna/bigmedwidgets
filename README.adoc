@@ -1,7 +1,7 @@
 = BigMed Widgets
 
 == Disclaimer 
-This project is not developed to demonstrate best practise. It's only  purpose is to make a quick and dirty prototype on how to connect a running EHR system based on openENR and to provide some CDS. The widgets are made to illustrate those in the following clinical desktop:
+This project is not developed to demonstrate best practise. It's only  purpose is to make a quick and dirty prototype on how to connect a running EHR system based on openEHR and to provide some CDS. The widgets are made to illustrate those in the following clinical desktop:
 
 https://xd.adobe.com/view/485b2d6b-5264-41fc-b5ca-f18aaa635cb6/?fullscreen[]
 
