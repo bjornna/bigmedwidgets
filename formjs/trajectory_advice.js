@@ -2,6 +2,7 @@ var PROBLEM = "forløpsveiledning/problem_diagnose/problem_diagnosenavn";
 var ACTION_1 = "forløpsveiledning/alternativ_1@Alternativ 1/anbefaling"
 var ACTION_2 = "forløpsveiledning/alternativ_2@Alternativ 2/anbefaling";
 var ACTION_3 = "forløpsveiledning/alternativ_3@Alternativ 3/anbefaling";
+var ROOT = "forløpsveiledning";
 var SUBJECT_ID_FIELD = "generic-field-97825";
 var widgetServerUrl = "http://localhost:3000/api/ehrs";
 
